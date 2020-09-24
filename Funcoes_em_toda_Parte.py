@@ -29,24 +29,12 @@ def drawPlanet(starSize, starColour):
     end_fill()
     penup()
 
-def drawGalaxy(number0fStars):
-    starColours = ["White","SkyBlue"]
-    moveToRandomLocation()
-    #desenha várias pequenas estrelas coloridas
-    for star in range(number0fStars):
-        penup()
-        left( randint(-180,180))
-        forward( randint(5,20))
-        pendown()
-        #desenha uma pequena estrela de cor aleatória
-        drawStar( 2, choice(starColours))
-
 speed(30)
 
-#isso desenha um fundo azul escuro
+#isso desenha um fundo preto
 bgcolor("black")
 
-#desenha 30 estrelas brancas (tamanho,posições aleatórias)
+#desenha 200 estrelas brancas e 200 estrelas Azuis (tamanho,posições aleatórias)
 for star in range(200):
     moveToRandomLocation()
     drawStar( randint(1,5) , "White")
@@ -55,25 +43,53 @@ for star in range(200):
     moveToRandomLocation()
     drawStar( randint(1,5) , "SkyBlue")
 
+
+#desenha Planetas e sol (tamanho,posições especificas)
 for Planeta in range(1):
+    #SOL
     penup()
     setpos(-700,-100)
     pendown()
-    drawPlanet(3, "Gold")
+    drawPlanet(3, "gold")
+    #MERCURIO
     penup()
-    setpos(-400,0)
+    setpos(-400,30)
     pendown()
-    drawPlanet(0.9, "DarkRed")
+    drawPlanet(0.4, "gray")
+    #VENUS
     penup()
-    setpos(-100,0)
+    setpos(-300,10)
     pendown()
-    drawPlanet(1, "DeepSkyBlue")
+    drawPlanet(0.7,"DarkGoldenrod")
+    #TERRA
     penup()
-    setpos(0,0)
+    setpos(-170,-10)
+    pendown()
+    drawPlanet(1.1,"LightSkyBlue")
+    #MARTE
+    setpos(-25,0)
+    pendown()
+    drawPlanet(0.8,"DarkRed")
+    #JUPITE
+    penup()
+    setpos(130,-30)
     pendown()
     drawPlanet(1.5, "Khaki")
-
-
+    #SATURNO
+    penup()
+    setpos(300,0)
+    pendown()
+    drawPlanet(0.9,"PaleGoldenrod")
+    #URANO
+    penup()
+    setpos(410,20)
+    pendown()
+    drawPlanet(0.6, "blue")
+    #NETUNO
+    penup()
+    setpos(500,25)
+    pendown()
+    drawPlanet(0.4,"DeepSkyBlue")
 
 hideturtle()
-done  
+done()
