@@ -65,4 +65,4 @@ for constellation in range(2):
     
 
 hideturtle()
-done
+done()
